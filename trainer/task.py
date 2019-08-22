@@ -5,7 +5,7 @@ from tensorflow.contrib.learn.python.learn import learn_runner
 from tensorflow.contrib.learn.python.learn.utils import saved_model_export_utils
 
 print(tf.__version__)
-tf.logging.set_verbosity(tf.logging.ERROR)
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
 data_train = pd.read_csv(
   filepath_or_buffer='https://storage.googleapis.com/vijay-public/boston_housing/housing_train.csv',
