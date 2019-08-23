@@ -24,7 +24,7 @@ feature_cols = [tf.feature_column.numeric_column(k)
 
 def generate_estimator(output_dir):
   return tf.estimator.DNNRegressor(feature_columns=feature_cols,
-                                            hidden_units=[10, 10],
+                                            hidden_units=[15, 10],
                                             model_dir=output_dir)
 
 def generate_input_fn(data_set):
@@ -54,7 +54,7 @@ def serving_input_fn():
 
 train_spec = tf.estimator.TrainSpec(
                 input_fn=generate_input_fn(data_train),
-                max_steps=3000)
+                max_steps=3500)
 
 exporter = tf.estimator.LatestExporter('Servo', serving_input_fn)
 
